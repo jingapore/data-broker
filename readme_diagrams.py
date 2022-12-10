@@ -36,9 +36,3 @@ with Diagram("data broker system design", show=False):
         >> Edge(label="search for permissioning path")
         >> data_requester_graph
     )
-
-    (
-        policy_engine
-        >> Edge(label="search for permissioning path")
-        >> data_requester_graph
-    )
