@@ -22,6 +22,8 @@ The problem is about whether there is a path from XXX to XXX.
 
 But first, these two graphs are not connected, and hence there is currently no path. The way to connect them is via a **Casbin policy object**. The tracing of a path is done via a **Casbin matcher**, and a **Casbin effect** returns a `true` only if there is an allow path, and there is no deny path.
 
+![image](./data_broker_system_design.png)
+
 ## Elaboration on Casbin matcher
 
 Matcher is like a reducer, taking in `r.obj` and `p.obj`. It reduces the object in question to its source. Then we check if the necessary policy applies.
@@ -48,3 +50,7 @@ TODO: User impersonation.
 # Components
 
 In this repo, the components are implemented as Docker containers. But you may wish to implement them using cloud-native tooling. That will simply require changing the config that specifies interfaces between the various components.
+
+# Useful references
+
+- OPA, as an alternative to Casbin, implements policy-as-SQL [link here](https://blog.openpolicyagent.org/write-policy-in-opa-enforce-policy-in-sql-d9d24db93bf4).
